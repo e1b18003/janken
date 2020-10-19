@@ -9,12 +9,32 @@
 </head>
 
 <body>
+  <a href="/logout">ログアウト</a>
   <h1>Lec02GET!</h1>
 
 
-  <div th:if="${namae}">
-    Hi [[${namae}]]
+  <p>エントリー</p>
+  <ul>
+    <div th:if="${login_user}">
+      <li>Hi [[${login_user}]]</li>
+    </div>
+
+  </ul>
+
+  <div th:if="${room}">
+    <ul>
+      <li th:each="user : ${room.users}">[[${user}]]</li>
+    </ul>
   </div>
+
+  <div th:if="${new_room}">
+    <ul>
+      <li th:each="user : ${new_room.users}">[[${user}]]</li>
+    </ul>
+  </div>
+
+
+
 
   <p>
     <a href="/jan/1">ぐー</a>
@@ -28,7 +48,6 @@
     <p>結果 [[${syouhai}]]</p>
   </div>
 
-  <a href="/logout">ログアウト</a>
 </body>
 
 </html>
