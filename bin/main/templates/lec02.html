@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.springframework.org/schema/security">
+
 <html>
 
 <head>
@@ -13,6 +15,9 @@
   <div th:if="${namae}">
     Hi [[${namae}]]
   </div>
+
+  <h1>Authorized! [[${login_user}]]</h1>
+
   <p>
     <a href="/jan/1">ぐー</a>
     <a href="/jan/2">ちょき</a>
@@ -20,9 +25,9 @@
   </p>
 
   <div th:if="${syouhai}">
-  <p>あなたの手 [[${te}]]</p>
-  <p>相手の手 Gu</p>
-  <p>結果 [[${syouhai}]]</p>
+    <p>あなたの手 [[${te}]]</p>
+    <p>相手の手 Gu</p>
+    <p>結果 [[${syouhai}]]</p>
   </div>
 
 </body>
