@@ -14,7 +14,7 @@ public class Lec02Controller {
    *
    * @return
    */
-  @GetMapping("/lec02")
+  @GetMapping("/lec02/step1")
   public String lec02() {
     return "lec02.html";
   }
@@ -23,16 +23,15 @@ public class Lec02Controller {
    * @param namae
    * @return
    */
-  @PostMapping("/lec02")
-  public String lec02(@RequestParam String namae, ModelMap model) {
-    model.addAttribute("namae", namae);
+  /*
+   * @PostMapping("/lec02") public String lec02(@RequestParam String namae,
+   * ModelMap model) { model.addAttribute("namae", namae); return "lec02.html"; }
+   */
+
+  @GetMapping("/gu")
+  public String gu() {
     return "lec02.html";
   }
-
-    @GetMapping("/gu")
-    public String gu() {
-      return "lec02.html";
-    }
 
   /**
    * @param param
@@ -53,9 +52,7 @@ public class Lec02Controller {
       model.addAttribute("syouhai", "You Win");
     }
 
-
-
-      return "lec02.html";
+    return "lec02.html";
   }
 
 }
