@@ -29,7 +29,12 @@ public class Lec03AuthConfiguration extends WebSecurityConfigurerAdapter {
 
     http.formLogin();
 
+    // ログインパスワードのやつ
     http.authorizeRequests().antMatchers("/lec02/**").authenticated();
+
+    // h2コンソールのやつ
+    http.csrf().disable();
+    http.headers().frameOptions().disable();
 
     http.logout().logoutSuccessUrl("/");
   }
